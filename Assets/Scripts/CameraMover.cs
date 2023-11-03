@@ -7,11 +7,13 @@ using UnityEngine;
 public class CameraMover : MonoBehaviour
 {
 
-    [SerializeField] private Bounds borders;
+    [SerializeField] private int width = 400;
+    [SerializeField] private int height = 200;
 
     [SerializeField] private float minSize = 10f;
     [SerializeField] private float maxSize = 100f;
     [SerializeField] private float moveSpeed = 1f;
+    [SerializeField] private float pullbackSpeed = 0.1f;
     [SerializeField] private float zoomSpeed = 2f;
 
     private Camera view;
@@ -37,16 +39,25 @@ public class CameraMover : MonoBehaviour
 
         transform.position += position;
 
-        if (!borders.Contains(transform.position))
-            PullBack();
+        PullBack();
     }
 
     private void PullBack()
     {
-        var pullTo = borders.ClosestPoint(transform.position);
+        if ((Matrix4x4.Scale(new Vector3(width, height, 1)) * transform.position.normalized).magnitude < Mathf.Min(width, height))
+            return;
 
-        var pullback = (transform.position - pullTo) * (moveSpeed / 2f);
+        float xSpeed = 0;
+        float ySpeed = 0;
+
+        if ((width - Mathf.Abs(transform.position.x)) < 0)
+            xSpeed = (width - Mathf.Abs(transform.position.x)) * (Mathf.Abs(transform.position.x) / transform.position.x);
         
-        transform.position -= pullback / moveSpeed;
+        if ((height - Mathf.Abs(transform.position.y)) < 0)
+            ySpeed = (height - Mathf.Abs(transform.position.y)) * (Mathf.Abs(transform.position.y) / transform.position.y);
+
+        Vector2 pullback = new Vector2(xSpeed, ySpeed);
+
+        transform.position += (Vector3)pullback * pullbackSpeed;
     }
 }
