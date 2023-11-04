@@ -4,13 +4,13 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class StarNode : MonoBehaviour
 {
-    public Star info { get; private set; }
+    private Star info;
 
     public event Action<StarNode, Star> OnNodeClick;
 
     void Start()
     {
-        info = StarGenerator.GetStar();
+        info = StarGenerator.GetStar(transform.position.magnitude);
     }
 
     private void OnMouseDown()
