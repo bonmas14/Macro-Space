@@ -641,8 +641,8 @@ MonoBehaviour:
     Metal -
     0000 | 0 price per one'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ee45c1531b44f84428b10c09733152ea, type: 2}
-  m_sharedMaterial: {fileID: 27994678383820222, guid: ee45c1531b44f84428b10c09733152ea, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 367c5979c388577439b50a2e4b1a58dd, type: 2}
+  m_sharedMaterial: {fileID: -1585201486386112570, guid: 367c5979c388577439b50a2e4b1a58dd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1003,8 +1003,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: v0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 367c5979c388577439b50a2e4b1a58dd, type: 2}
+  m_sharedMaterial: {fileID: -1585201486386112570, guid: 367c5979c388577439b50a2e4b1a58dd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
