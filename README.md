@@ -10,6 +10,6 @@ Trade and fight as a commander of multiple spaceships.
 - _that's all for now_
 
 ## License
-All code distributed under MIT licence. All original assets and the game itself licensed under [CC-BY-NC-4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.en)
+All code distributed under MIT licence. All original audio/graphical assets and the game itself licensed under [CC-BY-NC-4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.en)
 
 
