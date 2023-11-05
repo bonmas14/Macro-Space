@@ -35,6 +35,5 @@ public class ShipNode : MonoBehaviour
 
     void Update()
     {
-
     }
 }

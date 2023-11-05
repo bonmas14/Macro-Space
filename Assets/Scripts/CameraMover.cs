@@ -44,7 +44,9 @@ public class CameraMover : MonoBehaviour
 
     private void PullBack()
     {
-        if ((Matrix4x4.Scale(new Vector3(width, height, 1)) * transform.position.normalized).magnitude < Mathf.Min(width, height))
+        Vector4 direction = Matrix4x4.Scale(new Vector3(width, height, 0)) * ((Vector2)transform.position).normalized;
+
+        if (direction.magnitude <= Mathf.Min(width, height))
             return;
 
         float xSpeed = 0;
@@ -57,7 +59,6 @@ public class CameraMover : MonoBehaviour
             ySpeed = (height - Mathf.Abs(transform.position.y)) * (Mathf.Abs(transform.position.y) / transform.position.y);
 
         Vector2 pullback = new Vector2(xSpeed, ySpeed);
-
         transform.position += (Vector3)pullback * pullbackSpeed;
     }
 }

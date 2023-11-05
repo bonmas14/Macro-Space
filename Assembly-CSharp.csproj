@@ -60,9 +60,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\FightResult.cs" />
+    <Compile Include="Assets\Scripts\Logic\ShipNode.cs" />
     <Compile Include="Assets\Scripts\World\Resource.cs" />
+    <Compile Include="Assets\Scripts\Logic\StarNode.cs" />
     <Compile Include="Assets\Scripts\World\Star.cs" />
-    <Compile Include="Assets\Scripts\World\StarNode.cs" />
     <Compile Include="Assets\Scripts\World\GameCreator.cs" />
     <Compile Include="Assets\Scripts\World\GameGenerator.cs" />
     <Compile Include="Assets\Scripts\World\Ship.cs" />
@@ -70,7 +71,6 @@
     <Compile Include="Assets\Scripts\CameraMover.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\GameSave.cs" />
     <Compile Include="Assets\Scripts\UIStarInfo.cs" />
-    <Compile Include="Assets\Scripts\World\ShipNode.cs" />
     <Compile Include="Assets\Scripts\GameState.cs" />
   </ItemGroup>
   <ItemGroup>

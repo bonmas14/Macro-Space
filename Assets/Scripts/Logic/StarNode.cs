@@ -14,6 +14,8 @@ public class StarNode : MonoBehaviour
     private Star star;
     private Resource[] resources;
 
+    public event Action<StarNode, Star> OnNodeClick;
+
     private Star GetInfo()
     {
         star.resources = resources;
@@ -28,7 +30,6 @@ public class StarNode : MonoBehaviour
         star = value;
     }
 
-    public event Action<StarNode, Star> OnNodeClick;
     
     private void OnMouseDown()
     {
