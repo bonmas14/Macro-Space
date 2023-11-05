@@ -32,10 +32,11 @@ public static class GameSave
         return file;
     }
 
-    public static void SaveGame(SaveFile game)
+    public static void SaveGame()
     {
-        PlayerPrefs.SetInt(GameSaveKey, 0);
+        PlayerPrefs.SetInt(GameSaveKey, 1);
 
+        SaveFile game = GameState.CurrentState;
         string text = JsonUtility.ToJson(game);
 
         File.WriteAllText(Path.Combine(Application.persistentDataPath, SaveName), text);

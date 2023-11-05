@@ -38,7 +38,14 @@ public static class GameGenerator
         int level = (int)(baseLevel + baseLevel * levelMultiplierByDistance * offsetFromCenter);
         int quantity = (int)(baseResources + baseResources * resourcesMultiplierByDistance * offsetFromCenter);
 
-        return new Star(Random.Range(1, 10000), fullname, level, ResourceGenerator.GetResources(quantity, level), position);
+        return new Star()
+        { 
+            id = Random.Range(1, 10000), 
+            name = fullname, 
+            level = level, 
+            resources = ResourceGenerator.GetResources(quantity, level),
+            position = position 
+        };
     }
 
     public static SaveFile GenerateGame()
@@ -97,7 +104,13 @@ public static class ResourceGenerator
     {
         return new Resource[]
         {
-            new Resource("Metal", 2, (int)(Mathf.Exp(0.01f * -Mathf.PI * ((float)quantity / GameGenerator.baseResources) * 1.01f) * 10), quantity)
+            new Resource()
+            {
+                name = "Metal",
+                minimalLevel = 2,
+                price = (int)(Mathf.Exp(0.01f * -Mathf.PI * ((float)quantity / GameGenerator.baseResources) * 1.01f) * 10), 
+                quantity = quantity 
+            },
         };
     }
 }

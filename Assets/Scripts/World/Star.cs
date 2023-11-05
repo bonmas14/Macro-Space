@@ -5,19 +5,10 @@ using UnityEngine;
 public struct Star
 {
     public int id;
-    public Vector2 position;
-    public string name;
     public int level;
+    public string name;
+    public Vector2 position;
     public Resource[] resources;
-
-    public Star(int id, string name, int level, Resource[] resources, Vector2 position)
-    {
-        this.id = id;
-        this.name = name;
-        this.level = level;
-        this.resources = resources;
-        this.position = position;
-    }
 
     private readonly int GetResourcesCount(Resource[] resources)
     {
